@@ -4,10 +4,10 @@ import Spinner from '../common/Spinner'
 import FeedbackContext from '../context/FeedbackContext'
 import FeedbackItem from './FeedbackItem'
 
-const FeedbackList = () => {
+function FeedbackList() {
   const { feedback, isLoading } = useContext(FeedbackContext)
 
-  if (!isLoading && (!feedback || feedback.lenght === 0)) {
+  if (!isLoading && (!feedback || feedback.length === 0)) {
     return <p>No Feedback Yet</p>
   }
 

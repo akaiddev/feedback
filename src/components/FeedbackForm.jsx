@@ -4,11 +4,11 @@ import Card from '../common/Card'
 import FeedbackContext from '../context/FeedbackContext'
 import RatingSelect from './RatingSelect'
 
-const FeedbackForm = () => {
+function FeedbackForm() {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
-  const [message, setMessage] = useState('Hello')
+  const [message, setMessage] = useState('')
 
   const { addFeedback, feedbackEdit, updateFeedback } = useContext(FeedbackContext)
 
@@ -31,6 +31,7 @@ const FeedbackForm = () => {
       setMessage(null)
       setBtnDisabled(false)
     }
+
     setText(e.target.value)
   }
 
@@ -41,11 +42,13 @@ const FeedbackForm = () => {
         text,
         rating,
       }
+
       if (feedbackEdit.edit === true) {
         updateFeedback(feedbackEdit.item.id, newFeedback)
       } else {
         addFeedback(newFeedback)
       }
+
       setText('')
     }
   }
