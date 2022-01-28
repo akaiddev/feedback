@@ -6,12 +6,12 @@ import Header from './common/Header'
 import FeedbackForm from './components/FeedbackForm'
 import FeedbackList from './components/FeedbackList'
 import FeedbackStats from './components/FeedbackStats'
-import { FeedBackProvider } from './context/FeedbackContext'
+import { FeedbackProvider } from './context/FeedbackContext'
 import AboutPage from './pages/AboutPage'
 
 const App = () => {
   return (
-    <FeedBackProvider>
+    <FeedbackProvider>
       <BrowserRouter>
         <Header />
         <div className='container'>
@@ -33,7 +33,7 @@ const App = () => {
 
         <Footer />
       </BrowserRouter>
-    </FeedBackProvider>
+    </FeedbackProvider>
   )
 }
 
